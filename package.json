@@ -1,0 +1,28 @@
+{
+  "name": "linkedin2neo4j",
+  "version": "0.1.0",
+  "description": "The purpose of this project is to connect with the linkedin api and have users log in. After which a neo4j database is updated with their information and an overall graph is built out that can be visualized",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickmayn/LinkedIn2Neo4j.git"
+  },
+  "author": "Nick Maynard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickmayn/LinkedIn2Neo4j/issues"
+  },
+  "homepage": "https://github.com/nickmayn/LinkedIn2Neo4j#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "html": "^1.0.0",
+    "mongodb": "^4.1.1",
+    "mongoose": "^6.0.0",
+    "neovis.js": "^1.6.0"
+  }
+}
