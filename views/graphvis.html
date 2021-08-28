@@ -1,16 +1,100 @@
 <!doctype html>
 <html>
+    <style>
+        body {
+            text-align: center;
+        }
+        canvas{
+            text-align: center;
+        }
+    </style>
+<div class="header" style="background-color: #222035; color:white; margin-top: 0; border: 4px solid #003062; vertical-align: middle; display: flex;">
+    <span style="font-size:30px;cursor:pointer;text-align: center; border-left: 20px solid #222035; border-top: 20px solid #222035;" onclick="openNav()">&#9776; </span>
+    <h1 style="flex-grow: 1;">LinkedIn Network Connections</h1>
+</div>
 <head>
-    <title>Neovis.js Simple Example</title>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #222035;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </div>
+    
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+
+
+
+
+    <title>Linkedin Network Connections</title>
     <style type="text/css">
         html, body {
             font: 16pt arial;
         }
 
         #viz {
-            width: 900px;
-            height: 700px;
-            border: 1px solid lightgray;
+            width: 100%;
+            height: 500px;
+            border: 5px solid #003062;
             font: 22pt arial;
         }
 
@@ -63,9 +147,23 @@
 		}
     </script>
 </head>
-<body onload="draw()">
-<div id="viz"></div>
 
+
+<div id="graph">
+    <body onload="draw()"></body>
+</div>
+
+<div style="display: flex;">
+    <div id="sidebar" style="flex-grow: 1; border: 4px solid #003062;">
+        <h4 style="color:#222035;">Find Connected Individuals</h4>
+        <label for="fname" style="font-size: 14px; color: #222035;">Enter Full Name:</label>
+        <input type="text" id="fname" style="color: #222035;"> <br><br>
+        <label for="company" style="font-size: 14px; color: #222035;">Enter Company Name:</label>
+        <input type="text" id="company" style="color: #222035;"> <br><br><br><br><br>
+        <input type="submit" value="Link Graphs" style="font-size: 24px;">
+    </div>  
+    <div id="viz" style="width: 75%"></div>
+</div>
 
 Cypher query: <textarea rows="4" cols=50 id="cypher"></textarea><br>
 <input type="submit" value="Submit" id="reload">
