@@ -7,8 +7,18 @@ app.set('view engine', 'ejs')
 
 
 app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/views/homepage.html')
+})
+
+app.get('/graph-tool', (req, res) => {
   res.sendFile(__dirname + '/views/graphvis.html')
 })
+
+
+
+app.get('/about', (req, res) => {
+  res.sendFile(__dirname + '/views/about.html');
+ });
 
 app.use('/models', neo4jconnection);
 
