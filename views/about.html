@@ -8,8 +8,126 @@
         canvas{
             text-align: center;
         }
+        .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+.fa-vine {
+  background: #00b489;
+  color: white;
+}
+
+.fa-foursquare {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-stumbleupon {
+  background: #eb4924;
+  color: white;
+}
+
+.fa-flickr {
+  background: #f40083;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #430297;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
     </style>
-<div class="header" style="background-color: #2867B2; color:white; margin-top: 0; vertical-align: middle; display: flex;">
+<div class="header" style="background-color: #2867B2; color:white; margin-top: 0; vertical-align: middle; display: flex; text-align: center;">
     <span style="font-size:30px;cursor:pointer;text-align: center; border-left: 20px solid #2867B2; border-top: 20px solid #2867B2;" onclick="openNav()">&#9776; </span>
     <h1 style="flex-grow: 1;">About the Project</h1>
 </div>
@@ -30,7 +148,7 @@
       z-index: 1;
       top: 0;
       left: 0;
-      background-color: #222035;
+      background-color: #2867B2;
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 60px;
@@ -40,13 +158,13 @@
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 25px;
-      color: #818181;
+      color: #f1f1f1;
       display: block;
       transition: 0.3s;
     }
     
     .sidenav a:hover {
-      color: #f1f1f1;
+      color: #818181;
     }
     
     .sidenav .closebtn {
@@ -65,7 +183,7 @@
     </head>
     <body>
     
-    <div id="mySidenav" class="sidenav">
+    <div id="mySidenav" class="sidenav" style="text-align: center;">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="/">Home</a>
       <a href="about">About</a>
@@ -88,4 +206,62 @@
 
 
     <title>About Page</title>
+
+
+    <div style="display: flex;">
+      <img src="../author.jpg" style="width: 300px; height: 300px; padding: 50px;">
+      <div style="flex-grow: 1; padding: 50px;"> 
+        <b style="font-size: 24px;">Educational Background:</b> <br> <br>
+
+        <body style="text-align: left;">
+          <ul>
+            <li>
+              <b style="font-size: 16px;">Virginia Tech</b>: from 2016-2020 I was enrolled at Virginia Tech studying computational modeling and data analytics. In this program I learned about a wide range of topics from statistical methods to advanced linear algebra to high performance computing. So far it has been a fantastic program that has helped me to succeed as a data scientist. 
+            </li>
+
+            <br>
+
+            <li>
+              <b style="font-size: 16px;">George Mason</b>: Beginning in 2021 I began work on my PhD. in Computational Science and Informatics from George Mason. In my first class at George Mason I began work on this project in order to learn the use of databases. I look forward to learning new tools like this in my time at Mason.
+            </li>
+          </ul>
+        
+        </body>
+
+        <b style="font-size: 24px;"> Work Experience:</b>
+
+        <body>
+          <ul>
+            <li>
+              <b style="font-size: 16px;">Data Analyst:</b>(Virginia Tech Softball) I worked as a data analyst for the Virginia Tech softball team using computer vision to automate pitch tracking.
+            </li>
+            <br>
+            <li>
+              <b style="font-size: 16px;">Software Intern:</b> (MITRE Corporation) In my time as a software intern I worked on embedding multi-dimensional data into lower dimensional space to perform unsupervised clustering/learning. 
+            </li>
+            <br>
+            <li>
+              <b style="font-size: 16px;">Software Engineer:</b> (MITRE Corporation) When working full time I started work on a machine learning based approach for automating phone notifications based on varying signal strengths.
+            </li>
+            <br>
+            <li>
+              <b style="font-size: 16px;">Data Scientist:</b> (MITRE Corporation) Currently I work as a data scientist leveraging large scale IP data in order to fingerprint entities in the cyber space.
+            </li>
+            <br>
+          </ul>
+        </body>
+      
+      </div>
+    </div>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <footer style="display: flex;">
+      <a href="https://github.com/nickmayn" class="fa fa-github" style="width: 25%; background-color: #333"></a>
+      <a href="https://www.linkedin.com/in/nick-maynard-624629124/" class="fa fa-linkedin" style="width: 25%;"></a>
+      <a href="https://www.instagram.com/main_attracktion_maynard/" class="fa fa-instagram" style="width: 25%;"></a>
+      <a href="https://www.facebook.com/nicholas.maynard.315" class="fa fa-facebook" style="width: 25%;"></a>
+    
+    </footer>
 </html>

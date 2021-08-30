@@ -12,61 +12,63 @@
 <div class="header" style="background-color: #2867B2; color:white; margin-top: 0; vertical-align: middle; display: flex;">
     <span style="font-size:30px;cursor:pointer;text-align: center; border-left: 20px solid #2867B2; border-top: 10px solid #2867B2;" onclick="openNav()">&#9776; </span>
     <h1 style="flex-grow: 1;">Welcome to the LinkedIn Connection Tool</h1>
-    <button type="button" style="border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px; height: 20%; border-color: white;
-    margin-top: 15px; margin-right: 20px; font-size: 12pt; font-family:sans-serif; color:#2867B2; background-color: white;">Login</button>
+    <form action="/login">
+      <input type="submit" value="Login" style="border-top-left-radius: 15px;
+      vertical-align: top;
+      border-top-right-radius: 15px;
+      padding-bottom: 20px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px; height: 20%; border-color: white;
+      margin-top: 15px; margin-bottom: 50px; margin-right: 20px; font-size: 12pt; font-family:sans-serif; color:#2867B2; background-color: white;" />
+  </form>
 </div>
 <head>
 
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    body {
-      font-family: "Lato", sans-serif;
-    }
-    
-    .sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #222035;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-    
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-    
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
-    
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-    
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-    }
-    </style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+      
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #2867B2;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #f1f1f1;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidenav a:hover {
+        color: #818181;
+      }
+      
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+      </style>
     </head>
     <body>
     

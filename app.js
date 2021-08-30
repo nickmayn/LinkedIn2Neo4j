@@ -14,6 +14,18 @@ app.get('/graph-tool', (req, res) => {
   res.sendFile(__dirname + '/views/graphvis.html')
 })
 
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/views/login-form.html')
+})
+
+app.get('/login-icon.png', (req, res) => {
+  res.sendFile(__dirname + '/login-icon.png')
+})
+
+app.get('/author.jpg', (req, res) => {
+  res.sendFile(__dirname + '/author.jpg')
+})
+
 
 
 app.get('/about', (req, res) => {

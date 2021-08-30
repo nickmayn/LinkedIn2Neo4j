@@ -19,49 +19,49 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    body {
-      font-family: "Lato", sans-serif;
-    }
-    
-    .sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #222035;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-    
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-    
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
-    
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-    
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-    }
-    </style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+      
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #2867B2;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #f1f1f1;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidenav a:hover {
+        color: #818181;
+      }
+      
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+      </style>
     </head>
     <body>
     
@@ -126,12 +126,14 @@
 				server_password: "csi695",
 				labels: {
 					//"Character": "name",
-					"Character": {
+					"Person": {
 						"caption": "name",
-						"size": "pagerank",
-						"community": "community"
 						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
-					}
+					},
+          "Movie": {
+            "caption": "title"
+
+          }
 				},
 				relationships: {
 					"INTERACTS": {
@@ -162,36 +164,48 @@
         <input type="text" id="fname" style="color: #222035;"> <br><br>
         <label for="company" style="font-size: 14px; color: #222035;">Enter Company Name:</label>
         <input type="text" id="company" style="color: #222035;"> <br><br><br><br><br>
-        <input type="submit" value="Link Graphs" style="font-size: 24px;">
+        <input type="submit" value="Link Graphs" style="font-size: 24px;" id="linkgraph">
     </div>  
     <div id="viz" style="width: 75%"></div>
 </div>
 
-Cypher query: <textarea rows="4" cols=50 id="cypher"></textarea><br>
-<input type="submit" value="Submit" id="reload">
 <input type="submit" value="Stabilize" id="stabilize">
-
 
 </body>
 
 <script>
-	$("#reload").click(function() {
-
-		var cypher = $("#cypher").val();
-
-		if (cypher.length > 3) {
-			viz.renderWithCypher(cypher);
-		} else {
-			console.log("reload");
-			viz.reload();
-
-		}
-
-	});
 
 	$("#stabilize").click(function() {
 		viz.stabilize();
 	})
+
+
+  $("#linkgraph").click(function() {
+
+    var company = $("#company").val();
+    var fname = $("#fname").val();
+    if (company.length > 0 && fname.length > 0) {
+      cypher = "MATCH p=(a)-[*]->(b) WHERE b.title='"+company+ "' AND a.name='"+fname+"' return p"
+    }
+    else if (company.length > 0) {
+      cypher = "MATCH p=(a)-[*]->(b) WHERE b.title='"+company+ "' return p"
+    }
+    else if (fname.length > 0) {
+      cypher = "MATCH p=(a)-[*]->(b) WHERE a.name='"+fname+ "' return p"
+    }
+    else {
+      cypher = "MATCH p=()-->() RETURN p"
+    }
+    console.log(cypher)
+    if (cypher.length > 3) {
+  viz.renderWithCypher(cypher);
+} else {
+      console.log("reload");
+      viz.reload();
+
+  }
+
+});
 
 </script>
 </html>
