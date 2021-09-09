@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html>
     <style>
         body {
@@ -8,6 +9,14 @@
         canvas{
             text-align: center;
         }
+        @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+}
     </style>
 <div class="header" style="background-color: #2867B2; color:white; margin-top: 0; vertical-align: middle; display: flex;">
     <span style="font-size:30px;cursor:pointer;text-align: center; border-left: 20px solid #2867B2; border-top: 10px solid #2867B2;" onclick="openNav()">&#9776; </span>
@@ -91,8 +100,14 @@
     </script>
 
 
-
+    <div id=body style="display: flex;">
+      <p style="width: 33%; padding: 30px; animation-duration: 1s; animation-name: fadein;">Test this div</p>
+      <p style="width: 33%; padding: 30px; animation-duration: 2s; animation-name: fadein;">Test this div</p>
+      <p style="width: 33%; padding: 30px; animation-duration: 3s; animation-name: fadein;">Test this div</p>
+    </div>
 
 
     <title>Home Page</title>
 </html>
+
+
